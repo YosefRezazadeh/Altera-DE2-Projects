@@ -37,18 +37,19 @@ The simulation result for padding=2 and stride=3
 
 ![output](./assets/outputs.png)
 
-The python code for this convolution in Pytorch:
+The python code for this convolution in Pytorch
 
-‍‍‍```
+
+```
 import torch
 input = torch.Tensor([x % 10 for x in range(507)]).reshape(1, 3, 13, 13)
 kernels = torch.Tensor([x % 7 for x in range(750)]).reshape(10, 3, 5, 5)
 torch.nn.functional.conv2d(input, kernels, padding=2, stride=3)
 ```
 
-The result of above code:
 
-‍‍‍‍‍‍```
+The result of above code‍‍‍‍‍
+```
 tensor([[[[ 321.,  648.,  587.,  566.,  302.],
           [ 555., 1069., 1009.,  939.,  557.],
           [ 560., 1049., 1049.,  869.,  508.],
@@ -108,7 +109,4 @@ tensor([[[[ 321.,  648.,  587.,  566.,  302.],
           [ 533., 1063., 1157.,  931.,  551.],
           [ 526., 1015., 1059., 1003.,  533.],
           [ 321.,  648.,  587.,  566.,  302.]]]])
-
 ```
-
-
